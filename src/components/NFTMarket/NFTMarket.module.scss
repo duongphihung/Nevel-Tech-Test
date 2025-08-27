@@ -1,0 +1,58 @@
+.root {
+    margin: 40px auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        padding: 0 8px;
+        justify-content: center; 
+        gap: 20px;
+
+        .container {
+            width: 95%;
+        }
+
+        .container_nft {
+            width: 45%;
+        }
+
+        .container_nft {
+            width: 45%;
+        }
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .group_btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            background-color: rgba(56, 58, 66, 1);
+            color: white;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: rgba(56, 58, 66, 0.8);
+            }
+        }
+    }
+}
+
+.title {
+    color: #ffc700;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+}

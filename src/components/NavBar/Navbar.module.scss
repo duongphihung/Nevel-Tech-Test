@@ -1,0 +1,224 @@
+.container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a0a0a;
+    padding: 16px 30px;
+    color: white;
+    position: relative;
+    
+    @media (max-width: 768px) {
+        padding: 12px 8px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 1001;
+
+    img {
+        height: 30px;
+        margin-right: 8px;
+        
+        @media (max-width: 768px) {
+            height: 25px;
+        }
+    }
+}
+
+.desktopMenu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        
+        @media (max-width: 992px) {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+
+.desktopAuth {
+    display: flex;
+    gap: 10px;
+
+}
+
+// Mobile Menu Button
+.mobileMenuBtn {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px 0px 10px;
+    z-index: 1001;
+    
+    @media (max-width: 768px) {
+        display: flex;
+    }
+
+    span {
+        width: 24px;
+        height: 3px;
+        background: #facc15;
+        margin: 2px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    &.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+// Mobile Menu Overlay
+.mobileMenu {
+    display: none;
+    
+    @media (max-width: 768px) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.mobileMenuList {
+    list-style: none;
+    padding: 100px 0 40px 0;
+    margin: 0;
+    text-align: center;
+
+    li {
+        margin: 0 16px 16px 16px;
+        padding: 18px 0;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: rgba(250, 204, 21, 0.1);
+            color: #facc15;
+        }
+    }
+}
+
+.mobileAuth {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px 40px 60px 40px;
+    align-items: center;
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+
+.active {
+    background: rgba(56, 58, 66, 1);
+    border-radius: 20px;
+    color: #facc15;
+}
+
+.menu li:hover,
+.mobileMenuList li:hover {
+    background: rgba(56, 58, 66, 1);
+    border-radius: 20px;
+    color: #facc15;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    font-size: 14px;
+    
+    @media (max-width: 992px) {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+}
+
+.signup {
+    font-style: italic;
+    background: #facc15;
+    color: black;
+    border-color: #facc15;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.login {
+    font-style: italic;
+    background: transparent;
+    border: 2px solid #facc15;
+    color: #facc15;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+body.menu-open {
+    overflow: hidden;
+    
+    @media (min-width: 769px) {
+        overflow: auto;
+    }
+}

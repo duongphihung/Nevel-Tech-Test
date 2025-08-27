@@ -1,0 +1,21 @@
+.root {
+    padding: 16px 8px;
+    background-color: #1f2023;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    img {
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        justify-content: center; 
+        gap: 20px;               
+    }
+}
+
